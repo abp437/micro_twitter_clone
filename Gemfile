@@ -34,6 +34,12 @@ gem 'bulma-rails', '~> 0.9.2'
 # Make working with forms in Rails simple
 gem 'simple_form', '~> 5.1'
 
+# For gravatar images in the app
+gem 'gravatar_image_tag', '~> 1.2'
+
+# For User authentications
+gem 'devise', '~> 4.8'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
