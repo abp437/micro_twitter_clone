@@ -21,6 +21,32 @@
         <p class="alert"><%= alert %></p>
       </div>
     <% end %>
+    <nav class="navbar is-info">
+      <div class="navbar-brand">
+        <!-- To add tags inside a `link_to` tag we have to apply a `do...end` block -->
+        <%= link_to root_path, class: 'navbar-item' do %>
+          <h1 class="title is-5 has-text-white">Twittter</h1>
+        <% end %>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarExample" class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <p class="control">
+                <%= link_to 'New Tweeet', new_tweeet_path, class: 'button is-info is-inverted' %>
+              </p>
+              <p class="control">Sign Up</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
