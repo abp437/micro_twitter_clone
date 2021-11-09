@@ -19,7 +19,7 @@ Also, you can have before and after action after a particular action is performe
 The difference between a `new` and `create` route is that the new route creates a blank object which can then be utiltised inside a form, but the create action actually creates a new entry/record in the db. We have a similar setup in edit/update flow edits pulls out the data/object from db and update actually updates an entry from the db.
 We put up our associations in Model files. We put associations in both the files they are associated in which means we may have one-to-one relationship, we need to specify it in both the files which have this association. Also we need to establish that relation in DB via a migration.
 
-Any variable defined with `@` in the beginning is automatically available in the view files, such variables are called instance variables.
+Any variable defined with `@` in the beginning is automatically available in the view files, such variables are called instance variables. Instance variables defined within an action are available even in the partials used inside the view file for that action. We don't need to explicitly pass local variables for each partial. Instance variables are available in it. If a partial explicitly needs local variables, then we can have it as well.
 You can have multiple instance variables passed to the same view file. But it is a convention to pass only one wrapped inside a PORO.
 You need to get acquainted with the methods provided by Rails, such as redirect_to, link_to, form_for, etc. It's used in controllers and views extensively.
 
