@@ -1,0 +1,32 @@
+Resources creates all possible CRUD routes for you, when you define them in the routes files.
+So, if you do a `resources :tweeets` in routes file, it creates the following routes for you:
+
+Prefix        Method   Route                            Controller#action
+-----------------------------------------------------------------------
+    tweeets   GET      /tweeets(.:format)                 tweeets#index
+              POST     /tweeets(.:format)                 tweeets#create
+ new_tweeet   GET      /tweeets/new(.:format)             tweeets#new
+edit_tweeet   GET      /tweeets/:id/edit(.:format)        tweeets#edit
+     tweeet   GET      /tweeets/:id(.:format)             tweeets#show
+              PATCH    /tweeets/:id(.:format)             tweeets#update
+              PUT      /tweeets/:id(.:format)             tweeets#update
+              DELETE   /tweeets/:id(.:format)             tweeets#destroy
+
+When we have a look at the routes we get to know which action will be fired on what route.
+The routes need to have identical names for actions and view files, unless specified otherwise.
+
+Also, you can have before and after action after a particular action is performed. So, it's basically a callback before/after something has happened in a particular action.
+The difference between a `new` and `create` route is that the new route creates a blank object which can then be utiltised inside a form, but the create action actually creates a new entry/record in the db. We have a similar setup in edit/update flow edits pulls out the data/object from db and update actually updates an entry from the db.
+We put up our associations in Model files. We put associations in both the files they are associated in which means we may have one-to-one relationship, we need to specify it in both the files which have this association. Also we need to establish that relation in DB via a migration.
+
+Any variable defined with `@` in the beginning is automatically available in the view files, such variables are called instance variables.
+You can have multiple instance variables passed to the same view file. But it is a convention to pass only one wrapped inside a PORO.
+You need to get acquainted with the methods provided by Rails, such as redirect_to, link_to, form_for, etc. It's used in controllers and views extensively.
+
+Steps to navigate through Rails:
+Even before you start working on actual code, just have a check that you need to compulsorily have a controller, a route, a model and a view to work with.
+Look at what action is fired at the route, what model it deals with.
+Check for before action, after action callbacks.
+Check for what associations it has with the specific model.
+Whenever we are trying to access a partial it starts off from a relative path or directly the root path.
+Apply validations for whatever you are doing in Rails, apply on model & on DB level as well.
