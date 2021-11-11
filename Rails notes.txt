@@ -30,3 +30,5 @@ Check for before action, after action callbacks.
 Check for what associations it has with the specific model.
 Whenever we are trying to access a partial it starts off from a relative path or directly the root path.
 Apply validations for whatever you are doing in Rails, apply on model & on DB level as well.
+
+The devise gem generates the model and views for use all by itself, it's very simple to integrate user authentication with that gem.
