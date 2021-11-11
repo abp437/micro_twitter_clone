@@ -25,6 +25,21 @@
           <small>@butter</small><br />
           <p><%= tweeet.tweeet %></p>
         </div>
+        <!-- Main container -->
+        <nav class="level">
+          <!-- Left side -->
+          <div class="level-left is-mobile">
+            <%= link_to tweeet, class: 'level-item' do %>
+              <span class="icon"><i class="far fa-link"></i></span>
+            <% end %>
+            <%= link_to edit_tweeet_path(tweeet), class: 'level-item' do %>
+              <span class="icon"><i class="far fa-pencil"></i></span>
+            <% end %>
+            <%= link_to tweeet, method: :delete, data: { confirm: 'Are you sure you want to delete this tweeet?' }, class: 'level-item' do %>
+              <span class="icon"><i class="far fa-trash"></i></span>
+            <% end %>
+          </div>
+        </nav>
       </div>
     </article>
   </div>
