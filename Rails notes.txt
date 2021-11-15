@@ -40,10 +40,12 @@ class Tweeet < ApplicationRecord
   belongs_to :user
 end
 ```
-Here the `user` symbol indicates the User model. Similarly the Tweeet model will be accessible in the User model like this:
+Here the `:user` symbol indicates the User model. Similarly the Tweeet model will be accessible in the User model like this:
 ```
 class User < ApplicationRecord
   has_many :tweeets
 end
 ```
 So, here we have established a one-to-many relationship like. One user has many tweeets and, conversely when we say one tweeet belongs to one user, we have established one-to-one relationship here.
+Although we have established those associations in the model files. We still need to explicitly add those associations in the DB, so we have to write migrations for establishing those associations in DB.
+To establish that relation we don't need to make entries into both tables we have to just add a column of `user_id` into the `tweeets` table & the association is established.
