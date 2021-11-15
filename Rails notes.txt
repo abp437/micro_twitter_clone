@@ -1,7 +1,7 @@
 Resources creates all possible CRUD routes for you, when you define them in the routes files.
 So, if you do a `resources :tweeets` in routes file, it creates the following routes for you:
 
-Prefix        Method   Route                            Controller#action
+Prefix        Method   Route                              Controller#action
 -----------------------------------------------------------------------
     tweeets   GET      /tweeets(.:format)                 tweeets#index
               POST     /tweeets(.:format)                 tweeets#create
@@ -32,3 +32,18 @@ Whenever we are trying to access a partial it starts off from a relative path or
 Apply validations for whatever you are doing in Rails, apply on model & on DB level as well.
 
 The devise gem generates the model and views for use all by itself, it's very simple to integrate user authentication with that gem.
+
+Associations:
+Whenever we add associations in the model files each model has now got it's own symbol which is accessible in other models files as another symbol. So, if we want to access User model inside Tweeet Model, we can add that association with the help of symbols like this:
+```
+class Tweeet < ApplicationRecord
+  belongs_to :user
+end
+```
+Here the `user` symbol indicates the User model. Similarly the Tweeet model will be accessible in the User model like this:
+```
+class User < ApplicationRecord
+  has_many :tweeets
+end
+```
+So, here we have established a one-to-many relationship like. One user has many tweeets and, conversely when we say one tweeet belongs to one user, we have established one-to-one relationship here.
